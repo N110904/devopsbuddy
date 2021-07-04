@@ -2,10 +2,10 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.mycompany.app</groupId>
-  <artifactId>my-app</artifactId>
+  <artifactId>maven-app</artifactId>
   <packaging>war</packaging>
-  <version>1.0-SNAPSHOT</version>
-  <name>my-app</name>
+  <version>1.0</version>
+  <name>maven-app</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -35,6 +35,11 @@
     	<artifactId>maven-war-plugin</artifactId>
     	<version>2.4</version>
     	<configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+            </manifest>
+          </archive>
        	 <failOnMissingWebXml>false</failOnMissingWebXml>
     	</configuration>
 	  </plugin>
@@ -58,6 +63,7 @@
           </execution>
         </executions>
       </plugin>
+      <!-- commented
       <plugin>
          <groupId>com.google.cloud.tools</groupId>
          <artifactId>jib-maven-plugin</artifactId>
@@ -75,6 +81,7 @@
            </to>
          </configuration>
       </plugin>
+       -->
     </plugins>
   </build>
 </project>
